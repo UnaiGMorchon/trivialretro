@@ -1,39 +1,6 @@
 
 
 // un fetch por cada categoria historia
-/* fetch("https://opentdb.com/api.php?amount=5&category=23&difficulty=easy&type=multiple")
-  .then(response => response.json())
-  .then(data => {
-    questionsHistoria = data.results;
-    createQuestion();
-})
-
-// fecth de ciencia
-fetch("https://opentdb.com/api.php?amount=5&category=17&difficulty=easy&type=multiple")
-  .then(response => response.json())
-  .then(data => {
-    questionsCiencia = data.results;
-    createQuestion();
-})
-
-//fetch de arte
-fetch("https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple")
-  .then(response => response.json())
-  .then(data => {
-    questionsArt = data.results;
-    createQuestion();
-})
-
-
-function (array){
-let type =[0,2]
-let position=[0,5]
-questionsHistory=[];
-questionsHistory.push([type],[position]);
-
-console.log(questionsHistory)
-}
- */
 
 fetch("https://opentdb.com/api.php?amount=5&category=23&difficulty=easy&type=multiple")
   .then(response => response.json())
@@ -46,29 +13,41 @@ fetch("https://opentdb.com/api.php?amount=5&category=23&difficulty=easy&type=mul
     console.log(questionsHistoria);
 });
 
+fetch("https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple")
+  .then(response => response.json())
+  .then(data => {
+    let questionsArt = data.results;
+    for (let i = 0; i < questionsArt.length; i++) {
+      questionsArt[i].type = [0, 2];
+      questionsArt[i].position = [0, 5];
+    }
+    console.log(questionsArt);
+});
 
 
-/* 
-
-
-
- */
-
+fetch("https://opentdb.com/api.php?amount=5&category=17&difficulty=easy&type=multiple")
+  .then(response => response.json())
+  .then(data => {
+    let questionsCiencia = data.results;
+    for (let i = 0; i < questionsCiencia.length; i++) {
+      questionsCiencia[i].type = [0, 2];
+      questionsCiencia[i].position = [0, 5];
+    }
+    console.log(questionsCiencia);
+});
 
 
 
 
 let categories={
-    "history": 23,
-    "ciencia": 17,
-    "arte": 25
+  "history": 23,
+  "ciencia": 17,
+  "arte": 25
 }
 
-function getQuestions(){
-for (let i = 0; i < categories.length; i++) {
-    const element = array[i];
-}
-}
+
+
+
 let category = categories["history"];
 
 // 5 preguntas de historia de la API
@@ -76,8 +55,6 @@ let questions =[];
 let questionNumber =0;
 let correctAnswer =[];
 let correctAnswerNumber =0;
-
-
 fetch("https://opentdb.com/api.php?amount=5&category=" + category + "&difficulty=easy&type=multiple")
   .then(response => response.json())
   .then(data => {
