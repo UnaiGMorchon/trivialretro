@@ -1,71 +1,48 @@
 
 
 // un fetch por cada categoria historia
-
-fetch("https://opentdb.com/api.php?amount=5&category=23&difficulty=easy&type=multiple")
-  .then(response => response.json())
-  .then(data => {
-    let questionsHistoria = data.results;
-    for (let i = 0; i < questionsHistoria.length; i++) {
-      questionsHistoria[i].type = [0, 2];
-      questionsHistoria[i].position = [0, 5];
-    }
-    console.log(questionsHistoria);
-});
-
-fetch("https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple")
-  .then(response => response.json())
-  .then(data => {
-    let questionsArt = data.results;
-    for (let i = 0; i < questionsArt.length; i++) {
-      questionsArt[i].type = [0, 2];
-      questionsArt[i].position = [0, 5];
-    }
-    console.log(questionsArt);
-});
-
-
-fetch("https://opentdb.com/api.php?amount=5&category=17&difficulty=easy&type=multiple")
-  .then(response => response.json())
-  .then(data => {
-    let questionsCiencia = data.results;
-    for (let i = 0; i < questionsCiencia.length; i++) {
-      questionsCiencia[i].type = [0, 2];
-      questionsCiencia[i].position = [0, 5];
-    }
-    console.log(questionsCiencia);
-});
-
-
-
-
 let categories={
   "history": 23,
   "ciencia": 17,
   "arte": 25
 }
 
-
-
-
-let category = categories["history"];
+// let category = categories["history"];
 
 // 5 preguntas de historia de la API
 let questions =[];
 let questionNumber =0;
 let correctAnswer =[];
 let correctAnswerNumber =0;
-fetch("https://opentdb.com/api.php?amount=5&category=" + category + "&difficulty=easy&type=multiple")
-  .then(response => response.json())
-  .then(data => {
-    questions = data.results;
-    createQuestion();
-})
-  .catch(error => {
-  console.error(error)
-});
+let category = 0;
+
+
+
+function getQuestions(category){
+  return new Promise((resolve,reject) =>{
+    fetch("https://opentdb.com/api.php?amount=5&category="+ category +"&difficulty=easy&type=multiple")
+    .then(response => response.json())
+    .then(data => {
+      questions.push(data.results);
+        resolve();
+  });
+
+  } )
+}
+
+async function initiale(){
+      await getQuestions(categories.history);
+      await getQuestions(categories.ciencia);
+      await getQuestions(categories.arte);
+console.log(questions);
+  createQuestion();
+
+}
+
+
+
 function createQuestion(){
-    let question = questions[questionNumber];
+    let question = questions[category][questionNumber];
     console.log(question);
     document.getElementById("question").innerText = question.question;
     let answers = question.incorrect_answers;
@@ -91,32 +68,7 @@ function shuffle(array) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-
- // 5 preguntas de arte de la API
-fetch('https://opentdb.com/api.php?amount=5&category=25&difficulty=easy&type=multiple')
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error(error))
-        
- // 5 preguntas de ciencia naturaleza de la API
- fetch('https://opentdb.com/api.php?amount=5&category=17&difficulty=easy&type=multiple')
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error(error))
-     */
+initiale();
 
 
     
