@@ -30,11 +30,21 @@ async function initiale(){ // La función initiale() es una función asíncrona 
       await getQuestions(categories.history);
       await getQuestions(categories.ciencia); // El uso de await asegura que cada llamada a getQuestions() se complete antes de continuar con la siguiente. 
       await getQuestions(categories.arte);
-console.log(questions); // la función imprime las preguntas (almacenadas en el array questions) en la consola
-  createQuestion(); //  llama a la función createQuestion().
+      console.log(questions); // la función imprime las preguntas (almacenadas en el array questions) en la consola
+      document.getElementById("loading").innerHTML="";  
+      createQuestion(); //  llama a la función createQuestion().
 }
 
+function loading(){
 
+  let animation = '<section id="loadingAnimation">\
+  \
+<lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_DGRf6G.json"  background="transparent"  speed="1"  style="width: 600px; height: 600px;"  loop autoplay></lottie-player>\
+</section>'
+document.getElementById("loading").innerHTML=animation;
+
+
+}
 
 
 
@@ -87,7 +97,7 @@ function nextTurn (){
     questionNumber ++;
   }
     if(questionNumber === numQuestions){
-        alert ("se ha acabado el juego");
+         window.location.href="gameover.html";
         return;
     }
   createQuestion();
@@ -120,6 +130,7 @@ function shuffle(array) { // La función shuffle toma un array como argumento y 
   }
 
 initiale(); //inicia la ejecución del juego.
+loading();
 
 
 
