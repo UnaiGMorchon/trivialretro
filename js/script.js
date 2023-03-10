@@ -40,7 +40,7 @@ console.log(questions); // la función imprime las preguntas (almacenadas en el 
 
 function createQuestion(){ //encargada de mostrar la pregunta y las opciones de respuesta en la interfaz gráfica del usuario
     let question = questions[category][questionNumber]; // Obtiene la pregunta actual basada en la variable questionNumber y la categoría actual basada en la variable category.
-    correctAnswer = question.correct_answer;                                      // Obtiene la respuesta correcta de la pregunta y la almacena en la variable correctAnswer.
+    correctAnswer = question.correct_answer;      // Obtiene la respuesta correcta de la pregunta y la almacena en la variable correctAnswer.
     console.log(question);
     document.getElementById("question").innerText = question.question; //Muestra la pregunta en la interfaz gráfica del usuario, estableciendo el contenido del elemento HTML con el id "question" como el texto de la pregunta. Cada objeto question contiene varias propiedades, incluyendo la pregunta en sí (question.question) y las opciones de respuesta (question.incorrect_answers y question.correct_answer).
     let answers = question.incorrect_answers; // Obtiene las respuestas incorrectas de la pregunta y las almacena en la variable answers
@@ -70,10 +70,14 @@ function clickAnswer(event){
     score +=12;
     console.log(score);
     document.getElementById("score").innerText = score; // pongo en pantalla el score
-    console.log("¡Respuesta correcta!");
+    console.log("¡Respuesta correcta! suma puntos");
+  } else {
+    score -=3;
+    document.getElementById("score").innerText = score;
+    console.log("fallaste te resta puntos");
   }
-  console.log("Se hizo clic en una respuesta");
   nextTurn();
+  
 
 }
 function nextTurn (){
@@ -89,9 +93,6 @@ function nextTurn (){
   createQuestion();
 }
 
-function gameOver (){
-
-}
                                                     // obtiene el elemento del DOM con el id "choices" y lo asigna a la variable "opction". Esto se hace para poder agregar un "escuchador de eventos" (event listener) a este elemento más tarde, y para poder agregar opciones de respuesta dentro de este elemento mediante código JavaScript.
   
   

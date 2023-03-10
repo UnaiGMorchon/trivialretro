@@ -1,23 +1,18 @@
 
 
+.cajaloading{
+    position: relative;
+    width: 220px; 
+    height: 200px; 
+    background-color: white;
+
+    }  
+
+
 body {
+    background-size: cover;
     background-image: url('/Users/unai/Desktop/bootcamp/trivialRetro(vicky-unai)/trivialretro/img/fondo.svg');
   }
 
-  
-
-#loading{
-    position: relative;
-    text-align: center;
-    
-    }
-
-    .cajaloading{
-    position: relative;
-    width: 220px; 
-      height: 1002px; 
-      background-color: white;
-      z-index: 2;
-    }  
-
+   
 
