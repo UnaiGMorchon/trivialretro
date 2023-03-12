@@ -1,7 +1,5 @@
 let nombre = sessionStorage.getItem("username");
-let color = sessionStorage.getItem("colorUser");
 document.getElementById("user").innerText = nombre;
-document.getElementById("Color").style.background = color;
 
 // hemos creado un objeto que contiene 3 variables con valores numericos
 let categories={
@@ -96,10 +94,13 @@ function clickAnswer(event){
     console.log("fallaste te resta puntos");
   }
   nextTurn();
+  sessionStorage.setItem("score", score)
+
   
 
 }
 function nextTurn (){
+
   category ++;
   if(category === numCategories){
     category= 0;
@@ -110,6 +111,7 @@ function nextTurn (){
         return;
     }
   createQuestion();
+
 }
 
                                                     // obtiene el elemento del DOM con el id "choices" y lo asigna a la variable "opction". Esto se hace para poder agregar un "escuchador de eventos" (event listener) a este elemento más tarde, y para poder agregar opciones de respuesta dentro de este elemento mediante código JavaScript.

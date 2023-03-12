@@ -1,7 +1,13 @@
 
+
 @font-face {
-  font-family: 'courier prime';
-  src: url(font/CourierPrime-Regular.ttf);
+  font-family: courierprime;
+  src: url(../font/CourierPrime-Regular.ttf);
+}
+
+*{
+ font-family: courierprime;
+  cursor:url(../image/cursorconfondo.cur), auto;
 }
 
 
@@ -29,12 +35,12 @@ body {
     position: absolute;
     text-align: center;
     z-index: 1;
-    scale: 150%;
+    scale: 125%;
   }
 }
 
 .textogameover{
-  font-size: 50px;
+  font-size: 25px;
   font-weight: bolder;
   text-align: center;
   padding-top: 50px;
@@ -92,3 +98,18 @@ button:hover {
     padding: 30px;
 }  
 
+
+
+footer{
+  position: absolute;
+  text-align: center;
+  font-size: 15px;
+  margin-top: 750px;
+}
+
+.iconosfooter{
+  vertical-align: middle;
+  scale: 50%;
+  margin-left: -12px;
+  margin-right: -12px;
+}

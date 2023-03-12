@@ -1,3 +1,3 @@
-setTimeout(function() {
-    window.location.href="login.html";
-  }, 4000);
+document.documentElement.addEventListener('click', function() {
+  window.location = 'login.html';
+  });

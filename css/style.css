@@ -1,14 +1,18 @@
 
 @font-face {
-    font-family: 'courier prime';
-    src: url(font/CourierPrime-Regular.ttf);
+  font-family: courierprime;
+  src: url(../font/CourierPrime-Regular.ttf);
+}
+
+*{
+ font-family: courierprime;
+  cursor:url(../image/cursorconfondo.cur), auto;
 }
 
 
 @media (max-width: 600px) {
   #loading {
     width: 200px;
-   
   }
 }
 
@@ -17,6 +21,7 @@ html, body {
   }
 
 body {
+  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,13 +38,14 @@ body {
 }
 
 #userName{
-  position: relative;
-  text-align: left;
+
   font-weight: bold;
-  top: -258px;
-  right: -150px;
+  position: fixed;
+  top: 50px;
+  left: 100px;
   font-size: xx-large;
 }
+
 
 .animationloading{
   position: relative;
@@ -73,7 +79,6 @@ padding-top: 6px;
 .cajaloading{
   position: relative;
   text-align: center;
-  margin: 10%;
   background-color: white;
   box-shadow: 2px 2px 4px #8a8989;
   border: 5px solid #d9cfde;
@@ -82,8 +87,8 @@ padding-top: 6px;
   max-width: 800px; 
   height: 320px;
   padding: 30px;
+  margin: 10%;
 }  
-
 
 
 #cardQuestion{
@@ -99,7 +104,22 @@ padding-top: 6px;
 
 .answer{
 font-weight: lighter;
-font-size: large;
+font-size: small;
 background-color: #facfcf;
 border-color: #d9cfde;
+}
+
+
+footer{
+  position: absolute;
+  text-align: center;
+  font-size: 15px;
+  margin-top: 750px;
+}
+
+.iconosfooter{
+  vertical-align: middle;
+  scale: 50%;
+  margin-left: -12px;
+  margin-right: -12px;
 }
