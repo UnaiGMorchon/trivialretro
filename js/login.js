@@ -1,14 +1,8 @@
-const miObjeto = { 
-            user: "",
-            age: "",
-            color:""
-        };
-
-function guardarDatos(){
-  let user = document.getElementById("username").value;
-  let age = document.getElementById("age").value;
+document.querySelector("form").addEventListener("submit", function(event) {
+  
+  let nombre = document.getElementById("username").value;
   let color = document.getElementById("colorUser").value;
-  sessionStorage.setItem("nombre", user);
-  sessionStorage.setItem("Edad", age);
-  sessionStorage.setItem("color", color);
-}
+  
+  sessionStorage.setItem("username", nombre);
+  sessionStorage.setItem("colorUser", color);
+});

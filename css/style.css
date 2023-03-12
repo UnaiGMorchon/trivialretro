@@ -1,18 +1,105 @@
 
-
-.cajaloading{
-    position: relative;
-    width: 220px; 
-    height: 200px; 
-    background-color: white;
-
-    }  
+@font-face {
+    font-family: 'courier prime';
+    src: url(font/CourierPrime-Regular.ttf);
+}
 
 
-body {
-    background-size: cover;
-    background-image: url('/Users/unai/Desktop/bootcamp/trivialRetro(vicky-unai)/trivialretro/img/fondo.svg');
+@media (max-width: 600px) {
+  #loading {
+    width: 200px;
+   
+  }
+}
+
+html, body {
+    height: 100%;
   }
 
-   
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-image: url('/Users/unai/Desktop/bootcamp/trivialRetro(vicky-unai)/trivialretro/image/fondo.svg');
+}
 
+#score{
+    font-weight: bold;
+    position: fixed;
+    top: 50px;
+    right: 100px;
+    font-size: xx-large;
+}
+
+#userName{
+  position: relative;
+  text-align: left;
+  font-weight: bold;
+  top: -258px;
+  right: -150px;
+  font-size: xx-large;
+}
+
+.animationloading{
+  position: relative;
+  padding-bottom: 200px;
+    
+}
+ 
+.textwindowgame{
+  float: left;
+  color: rgb(255, 255, 255);
+  margin-top: -49px;
+  left: -200px; 
+}
+ 
+
+.iconoequis, .iconocuadrado, .iconoguion{
+  float: right;
+  position: relative;
+  margin-top: -48px;
+  padding-bottom: 49px;
+  width: 15px;
+  height: 15px;
+  color-interpolation-filters: linearRGB;
+}
+
+.iconoguion{
+padding-top: 6px;
+}
+
+
+.cajaloading{
+  position: relative;
+  text-align: center;
+  margin: 10%;
+  background-color: white;
+  box-shadow: 2px 2px 4px #8a8989;
+  border: 5px solid #d9cfde;
+  border-top-width: 20px;
+  width: 50%; 
+  max-width: 800px; 
+  height: 320px;
+  padding: 30px;
+}  
+
+
+
+#cardQuestion{
+  position: relative;
+}
+
+
+
+.question{
+    font-weight: bold;
+    padding-bottom: 80px;
+}
+
+.answer{
+font-weight: lighter;
+font-size: large;
+background-color: #facfcf;
+border-color: #d9cfde;
+}

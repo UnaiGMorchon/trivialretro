@@ -1,3 +1,7 @@
+let nombre = sessionStorage.getItem("username");
+let color = sessionStorage.getItem("colorUser");
+document.getElementById("user").innerText = nombre;
+document.getElementById("Color").style.background = color;
 
 // hemos creado un objeto que contiene 3 variables con valores numericos
 let categories={
@@ -37,14 +41,19 @@ async function initiale(){ // La función initiale() es una función asíncrona 
 
 function loading(){
 
-  let animation = '<section id="loadingAnimation">\
+  let animation = 
+  `<section id="loading">\
+        \<lottie-player src="https://lottie.host/673bb5a7-5f41-44ba-a2bc-be1e69f54070/ClprJW4x8y.json" background="transparent" speed="90" loop autoplay></lottie-player>\
+    </section>`
+  
+  /* 
+  '<section id="loadingAnimation">\
   \
-<lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_DGRf6G.json"  background="transparent"  speed="1"  style="width: 600px; height: 600px;"  loop autoplay></lottie-player>\
-</section>'
+<lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_DGRf6G.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px;" loop autoplay></lottie-player>\
+</section>' */
 document.getElementById("loading").innerHTML=animation;
-
-
 }
+
 
 
 
@@ -106,6 +115,10 @@ function nextTurn (){
                                                     // obtiene el elemento del DOM con el id "choices" y lo asigna a la variable "opction". Esto se hace para poder agregar un "escuchador de eventos" (event listener) a este elemento más tarde, y para poder agregar opciones de respuesta dentro de este elemento mediante código JavaScript.
   
   
+
+
+
+
 
 
 

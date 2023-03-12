@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/trivialRetro/trivialretro/css/login.css" rel='stylesheet'>
+    <link href="css/login.css" rel='stylesheet'>
 </head>
 <body>
-    
 <section id="cardLogin">
-  <input type="text" id="username" placeholder="Name...">
-  <br>
-  <input type="text" id="age" placeholder="Age...">
-  <br>
+  <form action="../trivialretro/index.html">
+  <input type="text" id="username" placeholder="Username...">
   <br>
   <input type="color" id="colorUser" name="colorInput">
   <br>
-  <br>
-  <button onclick="guardarDatos()" id="start">Start!</button>
+  <button type="submit" id="start">Start!</button>
+  </form>
 </section>
-  <script src="js/login.js"></script>
+
+<section id="pruebaLogin">
+  <h3 id="usuario"></h3>
+</section>
+<script src="js/login.js"></script>
 </body>
 </html>

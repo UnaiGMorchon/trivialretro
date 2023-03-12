@@ -1,0 +1,73 @@
+
+@font-face {
+    font-family: 'courier prime';
+    src: url(font/CourierPrime-Regular.ttf);
+}
+
+
+html, body {
+    height: 100%;
+  }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-image: url('/Users/unai/Desktop/bootcamp/trivialRetro(vicky-unai)/trivialretro/image/fondo.svg');
+}
+
+
+
+#title{
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    scale: 300%;
+    padding-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+    #title {
+      scale: 125%;
+    }
+  }
+
+  .textwindowgame{
+    float: left;
+    color: rgb(255, 255, 255);
+    margin-top: -49px;
+    left: -200px;
+   
+  }
+
+ .iconoequis, .iconocuadrado, .iconoguion{
+    float: right;
+    position: relative;
+    margin-top: -48px;
+    padding-bottom: 49px;
+    width: 15px;
+    height: 15px;
+    color-interpolation-filters: linearRGB;
+  }
+
+  .iconoguion{
+padding-top: 6px;
+
+  }
+
+.cajaloading{
+    position: relative;
+    text-align: center;
+    margin: 10%;
+    background-color: white;
+    box-shadow: 2px 2px 4px #8a8989;;
+    border: 5px solid #d9cfde;
+    border-top-width: 20px;
+    width: 50%; 
+    max-width: 800px; 
+    height: 300px;
+    padding: 30px;
+    }  
+
+
