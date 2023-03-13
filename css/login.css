@@ -1,0 +1,117 @@
+
+
+@font-face {
+  font-family: courierprime;
+  src: url(../font/CourierPrime-Regular.ttf);
+}
+
+*{
+ font-family: courierprime;
+  cursor:url(../image/cursorconfondo.cur), auto;
+}
+
+
+html, body {
+    height: 100%;
+  }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-image: url('/Users/unai/Desktop/bootcamp/trivialRetro(vicky-unai)/trivialretro/image/fondo.svg');
+}
+
+
+.form{
+    position: relative;
+    text-align: center;
+    width: fit-content;
+    
+}
+
+#start {
+    position: relative;
+    text-align: center;
+    background-color: #d9cfde;
+    border-radius: 10px;
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  
+  
+  button:hover {
+    color: #fef0d6;
+  }
+  
+
+#cardLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #facfcf;
+    width: 100%;
+    height: 100;
+    border-radius: 8px; 
+}
+
+
+#colorUser, #username{
+    width: 50%;
+}
+
+
+  .textwindowgame{
+    float: left;
+    color: rgb(255, 255, 255);
+    margin-top: -49px;
+    left: -200px;
+   
+  }
+
+ .iconoequis, .iconocuadrado, .iconoguion{
+    float: right;
+    position: relative;
+    margin-top: -48px;
+    padding-bottom: 49px;
+    width: 15px;
+    height: 15px;
+    color-interpolation-filters: linearRGB;
+  }
+
+  .iconoguion{
+padding-top: 6px;
+
+  }
+
+.cajaloading{
+    position: relative;
+    text-align: center;
+    margin: 10%;
+    background-color: white;
+    box-shadow: 2px 2px 4px #8a8989;;
+    border: 5px solid #d9cfde;
+    border-top-width: 20px;
+    width: 50%; 
+    max-width: 800px; 
+    height: 300px;
+    padding: 30px;
+    font-size: 12px;
+    }  
+
+
+footer{
+  position: absolute;
+  text-align: center;
+  font-size: 15px;
+  margin-top: 750px;
+}
+
+.iconosfooter{
+  vertical-align: middle;
+  scale: 50%;
+  margin-left: -12px;
+  margin-right: -12px;
+}

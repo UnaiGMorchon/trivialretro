@@ -1,0 +1,38 @@
+
+@font-face {
+  font-family: courierprime;
+  src: url(../font/CourierPrime-Regular.ttf);
+}
+
+*{
+ font-family: courierprime;
+  cursor:url(../image/cursorconfondo.cur), auto;
+}
+
+
+html, body {
+    height: 100%;
+  }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-image: url('/Users/unai/Desktop/bootcamp/trivialRetro(vicky-unai)/trivialretro/image/fondo.svg');
+}
+
+
+#title{
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    scale: 300%;
+    padding-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+    #title {
+      scale: 125%;
+    }
+  }
